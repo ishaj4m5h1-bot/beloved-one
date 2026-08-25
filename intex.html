@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>For Khadeeju ♡</title>
+
+<style>
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #f7f7f5;
+  color: #171717;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+/* MUSIC */
+
+#musicButton {
+  position: fixed;
+  top: 18px;
+  right: 18px;
+  z-index: 1000;
+
+  width: 48px;
+  height: 48px;
+
+  border-radius: 50%;
+  border: 1px solid #222;
+
+  background: #111;
+  color: white;
+
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/* SCREENS */
+
+.screen {
+  min-height: 100vh;
+
+  display: none;
+
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+
+  padding: 35px 25px;
+
+  animation: appear 0.8s ease;
+}
+
+.screen.active {
+  display: flex;
+}
+
+/* TEXT */
+
+h1 {
+  font-size: 43px;
+  font-weight: normal;
+  letter-spacing: 1px;
+
+  margin-bottom: 20px;
+}
+
+h2 {
+  font-size: 34px;
+  font-weight: normal;
+
+  margin-bottom: 25px;
+}
+
+p {
+  max-width: 650px;
+
+  font-size: 18px;
+  line-height: 1.9;
+
+  margin-bottom: 22px;
+}
+
+.small {
+  font-size: 15px;
+  color: #666;
+  letter-spacing: 1px;
+}
+
+/* OPENING */
+
+.opening {
+  background:
+    linear-gradient(
+      rgba(255,255,255,0.92),
+      rgba(245,245,243,0.95)
+    );
+}
+
+.opening-symbol {
+  font-size: 50px;
+  margin-bottom: 30px;
+}
+
+.opening-line {
+  width: 55px;
+  height: 1px;
+  background: #222;
+  margin: 25px auto;
+}
+
+/* BUTTON */
+
+button.next {
+  margin-top: 20px;
+
+  padding: 13px 28px;
+
+  background: transparent;
+
+  border: 1px solid #222;
+  border-radius: 2px;
+
+  color: #111;
+
+  font-family: Georgia, serif;
+  font-size: 16px;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+button.next:hover {
+  background: #111;
+  color: white;
+}
+
+/* QUOTE */
+
+.quote {
+  font-size: 25px;
+  font-style: italic;
+
+  max-width: 700px;
+}
+
+/* PHOTO */
+
+.photo {
+  width: 85%;
+  max-width: 420px;
+
+  display: block;
+
+  margin: 25px auto;
+
+  border-radius: 3px;
+
+  filter: grayscale(100%);
+
+  box-shadow: 0 12px 35px rgba(0,0,0,0.12);
+}
+
+/* PHOTO CAPTION */
+
+.caption {
+  font-size: 15px;
+  color: #555;
+  letter-spacing: 0.5px;
+}
+
+/* MEMORY */
+
+.memory-number {
+  font-size: 13px;
+  letter-spacing: 4px;
+  color: #777;
+
+  margin-bottom: 15px;
+}
+
+/* FINAL */
+
+.final {
+  background: #111;
+  color: white;
+}
+
+.final h2 {
+  color: white;
+}
+
+.final p {
+  color: #eee;
+}
+
+.final .signature {
+  margin-top: 30px;
+
+  font-size: 25px;
+  font-style: italic;
+}
+
+/* ANIMATION */
+
+@keyframes appear {
+
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+  h1 {
+    font-size: 34px;
+  }
+
+  h2 {
+    font-size: 28px;
+  }
+
+  p {
+    font-size: 17px;
+  }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- MUSIC -->
+
+<audio id="bgMusic" src="threeofus.mp3"></audio>
+
+<button id="musicButton" onclick="toggleMusic()">🎶</button>
+
+
+<!-- SCREEN 1 -->
+
+<div id="screen1" class="screen active opening">
+
+  <div class="opening-symbol">
+    ♡
+  </div>
+
+  <p class="small">
+    A little page for someone special
+  </p>
+
+  <h1>
+    For my Khadeeju...
+  </h1>
+
+  <div class="opening-line"></div>
+
+  <p>
+    Some people enter our lives quietly,
+    and somehow become a beautiful part of our story.
+  </p>
+
+  <button class="next" onclick="nextScreen(2)">
+    Open ♡
+  </button>
+
+</div>
+
+
+<!-- SCREEN 2 -->
+
+<div id="screen2" class="screen">
+
+  <div class="memory-number">
+    01
+  </div>
+
+  <h2>
+    It started so simply...
+  </h2>
+
+  <p>
+    We first knew each other through
+    Tanzeel Online Hifz Quran Academy.
+  </p>
+
+  <p>
+    Back then, there wasn't really much chatting
+    between us.
+  </p>
+
+  <p>
+    Just little moments here and there —
+    reports, names, and small conversations.
+  </p>
+
+  <button class="next" onclick="nextScreen(3)">
+    Continue →
+  </button>
+
+</div>
+
+
+<!-- SCREEN 3 -->
+
+<div id="screen3" class="screen">
+
+  <div class="memory-number">
+    02
+  </div>
+
+  <h2>
+    Then life changed...
+  </h2>
+
+  <p>
+    I left Tanzeel and joined another academy.
+  </p>
+
+  <p>
+    Time passed, and our little connection
+    became quiet.
+  </p>
+
+  <p class="quote">
+    I never really expected that
+    we would become close one day.
+  </p>
+
+  <button class="next" onclick="nextScreen(4)">
+    But then... →
+  </button>
+
+</div>
+
+
+<!-- SCREEN 4 -->
+
+<div id="screen4" class="screen">
+
+  <div class="memory-number">
+    03
+  </div>
+
+  <h2>
+    You texted me.
+  </h2>
+
+  <p>
+    One day, you messaged me and asked,
+    <em>"How are you?"</em>
+  </p>
+
+  <p>
+    It may have been a simple question,
+    but it came at a time when I really needed
+    someone.
+  </p>
+
+  <button class="next" onclick="nextScreen(5)">
+    Keep reading ♡
+  </button>
+
+</div>
+
+
+<!-- SCREEN 5 -->
+
+<div id="screen5" class="screen">
+
+  <div class="memory-number">
+    04
+  </div>
+
+  <h2>
+    And somehow...
+  </h2>
+
+  <p>
+    From that day, you slowly became someone
+    I could talk to.
+  </p>
+
+  <p>
+    Someone I could tell things to.
+    Someone who listened.
+    Someone who supported me.
+  </p>
+
+  <p class="quote">
+    You became my supporter,
+    my ithatha,
+    and somehow... my friend.
+  </p>
+
+  <button class="next" onclick="nextScreen(6)">
+    There's more →
+  </button>
+
+</div>
+
+
+<!-- SCREEN 6 -->
+
+<div id="screen6" class="screen">
+
+  <div class="memory-number">
+    05
+  </div>
+
+  <h2>
+    My Hifz Mate 📖
+  </h2>
+
+  <p>
+    Maybe the most beautiful thing about this friendship
+    is where it began.
+  </p>
+
+  <p>
+    Two people connected through a Hifz journey,
+    who never even met in person,
+    yet somehow became close.
+  </p>
+
+  <p class="quote">
+    Distance never really stopped the friendship.
+  </p>
+
+  <button class="next" onclick="nextScreen(7)">
+    A few glimpses of you →
+  </button>
+
+</div>
+
+
+<!-- SCREEN 7 -->
+
+<div id="screen7" class="screen">
+
+  <div class="memory-number">
+    06 · A LITTLE GLIMPSE
+  </div>
+
+  <img
+    src="khadeeja-mirror.jpeg"
+    class="photo"
+    alt="Khadeeja mirror selfie"
+  >
+
+  <p class="caption">
+    Just a little glimpse of my Khadeeju. 🤍
+  </p>
+
+  <button class="next" onclick="nextScreen(8)">
+    Another one →
+  </button>
+
+</div>
+
+
+<!-- SCREEN 8 -->
+
+<div id="screen8" class="screen">
+
+  <div class="memory-number">
+    07 · ANOTHER GLIMPSE
+  </div>
+
+  <img
+    src="khadeeja-niqab.jpeg"
+    class="photo"
+    alt="Khadeeja"
+  >
+
+  <p class="caption">
+    Some moments don't need many words.
+  </p>
+
+  <button class="next" onclick="nextScreen(9)">
+    One more memory →
+  </button>
+
+</div>
+
+
+<!-- SCREEN 9 -->
+
+<div id="screen9" class="screen">
+
+  <div class="memory-number">
+    08 · A HIFZ MEMORY
+  </div>
+
+  <h2>
+    Takatuf
+  </h2>
+
+  <img
+    src="khadeeja-takatuf.jpeg"
+    class="photo"
+    alt="Khadeeja at Takatuf Annual Meet"
+  >
+
+  <p>
+    Takatuf Annual Meet · Nisf Program
+  </p>
+
+  <p>
+    A beautiful moment from your journey
+    of memorising 15 Juz.
+  </p>
+
+  <button class="next" onclick="nextScreen(10)">
+    One thing I want you to know →
+  </button>
+
+</div>
+
+
+<!-- SCREEN 10 -->
+
+<div id="screen10" class="screen">
+
+  <div class="memory-number">
+    09
+  </div>
+
+  <h2>
+    We've never even met.
+  </h2>
+
+  <p>
+    We've never sat beside each other,
+    never had a picture together,
+    never met face to face.
+  </p>
+
+  <p>
+    And yet, you've still managed to become
+    someone I feel comfortable talking to.
+  </p>
+
+  <p class="quote">
+    Some friendships don't need a place
+    to become real.
+  </p>
+
+  <button class="next" onclick="nextScreen(11)">
+    One last thing... →
+  </button>
+
+</div>
+
+
+<!-- SCREEN 11 -->
+
+<div id="screen11" class="screen">
+
+  <div class="memory-number">
+    10 · FROM ISHA
+  </div>
+
+  <h2>
+    Thank You, Thaslii. 🤍
+  </h2>
+
+  <p>
+    Thank you for being there.
+  </p>
+
+  <p>
+    Thank you for listening to me.
+  </p>
+
+  <p>
+    Thank you for supporting me
+    when I needed someone.
+  </p>
+
+  <p>
+    Thank you for being someone
+    I can tell my little things to.
+  </p>
+
+  <p>
+    I'm genuinely grateful that
+    a simple connection through Hifz
+    became a friendship I treasure.
+  </p>
+
+  <button class="next" onclick="nextScreen(12)">
+    And finally... ♡
+  </button>
+
+</div>
+
+
+<!-- FINAL SCREEN -->
+
+<div id="screen12" class="screen final">
+
+  <h2>
+    For My Khadeeju
+  </h2>
+
+  <img
+    src="isha.jpeg"
+    class="photo"
+    alt="Isha"
+  >
+
+  <p>
+    Maybe we started as just two people
+    who happened to know each other through Hifz.
+  </p>
+
+  <p>
+    But I'm really glad life gave me
+    a friend like you.
+  </p>
+
+  <p>
+    Stay the same beautiful,
+    supportive Thaslii you've always been.
+  </p>
+
+  <p class="signature">
+    From,<br>
+    Isha ♡
+  </p>
+
+  <p class="small" style="color:#aaa;">
+    My Hifz mate · My supporter · My ithatha · My friend
+  </p>
+
+</div>
+
+
+<script>
+
+function nextScreen(number) {
+
+  document.querySelectorAll(".screen").forEach(function(screen) {
+    screen.classList.remove("active");
+  });
+
+  document.getElementById("screen" + number).classList.add("active");
+
+  /* Start music on first click */
+  if (number === 2) {
+    document.getElementById("bgMusic").play();
+  }
+
+  window.scrollTo(0, 0);
+}
+
+
+function toggleMusic() {
+
+  const music = document.getElementById("bgMusic");
+
+  if (music.paused) {
+    music.play();
+  } else {
+    music.pause();
+  }
+
+}
+
+</script>
+
+</body>
+</html>
